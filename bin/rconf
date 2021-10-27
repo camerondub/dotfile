@@ -1,0 +1,69 @@
+#!/bin/bash
+################################################################################
+## rconf
+## Written by: Cameron Wong
+##             Aug 10, 2016
+## Copyright:  (C) 2014-2016 by Reosource Software.  -*- Bash -*-
+##
+## synchronization utility for reoconf modules
+################################################################################
+
+if [ "$#" -eq 0 ]; then
+    rconf end
+
+elif [ "$#" -ne 1 ]; then
+    echo "Usage: $(basename $0) [start/end/st]"
+    exit 1
+
+elif [ "$1" == "start" ]; then
+    echo ""
+    for d in $rconfd/*/ ; do
+        echo "==[$(basename $d)]==" | awk '{print toupper($0)}'
+        cd $d
+        git pull --ff-only &
+	git submodule update --remote --jobs=4 &
+        echo ""
+    done
+
+elif [ "$1" == "end" ]; then
+    echo ""
+    for d in $rconfd/*/ ; do
+        cd $d
+        if [[ `git status --porcelain` ]]; then
+            echo "==[$(basename $d)]==" | awk '{print toupper($0)}'
+            git diff
+            echo ""
+            git status --short
+            echo ""
+            echo -n "[CommitMsg]: "
+            read commitmsg
+            if [ -z "$commitmsg" ]; then
+                commitmsg="Update submodules"
+            fi
+            git add -A
+            git commit -m "$commitmsg"
+            git push
+            echo ""
+        fi
+    done
+    echo "Sync complete, safe to exit."
+    exit 0
+
+elif [ "$1" == "st" ]; then
+    echo ""
+    for d in $rconfd/*/ ; do
+        echo "==[$(basename $d)]==" | awk '{print toupper($0)}'
+        cd $d
+        if [ -n "$(git status --porcelain)" ]; then
+            git status --short
+        else
+            echo "..."
+        fi
+        echo ""
+    done
+
+else
+    echo "Unrecognized command."
+    echo "Usage: $(basename $0) [start/end/st]"
+    exit 1
+fi

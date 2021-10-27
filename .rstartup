@@ -1,0 +1,4 @@
+# launch tmux if its not already running
+if [ -z "$TMUX" ]; then
+	tmux
+fi

@@ -1,0 +1,12 @@
+--ignore-dir=.ccls-cache
+--ignore-dir=__pycache__
+--ignore-dir=.pyenv
+--ignore-dir=build
+--ignore-dir=dist
+--ignore-dir=build-test
+--ignore-dir=.mypy_cache
+--ignore-file=ext:Debug,Release,log,d
+--ignore-file=is:.tags
+--ignore-file=is:compile_commands.json
+--ignore-file=is:.note.md
+--ignore-file=is:.vimsession

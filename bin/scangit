@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+""" scan for local git repos with outstanding changes """
+
+import os
+import sys
+import getpass
+from typing import Iterable, Iterator
+
+import git
+
+
+def find_git_repos(search_dirs: Iterable[str]) -> Iterator[str]:
+    """find all directories under the given search_dirs that contain a git repo"""
+    for search_dir in search_dirs:
+        for current_dir, subdirs, _files in os.walk(search_dir):
+            if ".git" in subdirs:
+                yield current_dir
+                del subdirs[:]  # prevent further downwards recursive once repo is found
+
+
+def find_unpushed_changes(search_dirs: Iterable[str]) -> Iterable[str]:
+    """find all git repos under the given search_dirs that contain unpushed changes"""
+    for repo_dir in find_git_repos(search_dirs):
+        _repo = git.Repo(repo_dir)
+        if _repo.is_dirty(untracked_files=True):
+            yield repo_dir
+        # check for unpushed commits
+        for branch in _repo.branches:
+            if branch.tracking_branch():
+                rev_spec = "{0}@{1}..{0}".format(branch.name, "{u}")
+                try:
+                    commits = _repo.iter_commits(rev_spec)
+                    next(commits)
+                except StopIteration:
+                    pass  # no unpushed commits detected; nothing to be done
+                except git.GitCommandError:
+                    continue  # possible that upstream was deleted on remote end
+                else:
+                    yield repo_dir
+
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        dirs = ["/mnt/c/windev", f"~/.config/{getpass.getuser()}", "~/dev"]
+    else:
+        dirs = [sys.argv[1]]
+
+    for repo in find_unpushed_changes([os.path.expanduser(dir) for dir in dirs]):
+        print("{} has outstanding changes".format(repo))

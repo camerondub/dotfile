@@ -1,0 +1,34 @@
+#!/bin/bash
+################################################################################
+## scanbin
+## Written by: Cameron Wong
+##             Aug 10, 2016
+## Copyright:  (C) 2014-2016 by Reosource Software.  -*- Bash -*-
+##
+## utility to scan and link any utilities in reoconf/*/ to $HOME/bin
+################################################################################
+
+reoconfdir="$HOME/.config/reosource"
+targetdir="$HOME/bin"
+
+# ensure bin directory exists
+if [ ! -e $targetdir ]; then
+    mkdir -p $targetdir
+fi
+
+# clear old contents of bin directory
+rm -f $targetdir/*
+
+# link in utilities
+for d in $reoconfdir/*/ ; do
+    if [ -e $d/bin/ ]; then
+        thisdir=$(python3 -c "import os.path; print(os.path.abspath('${d}bin'))")
+        relpath=$(python3 -c "import os.path; print(os.path.relpath('$thisdir', '$targetdir'))")
+        for u in ${d}bin/* ; do
+            echo "Installing ${u}..."
+            filename=$(basename $u)
+            ln -s $relpath/$filename $targetdir/$filename
+        done
+    fi
+done
+echo "Done."

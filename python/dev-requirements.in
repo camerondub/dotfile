@@ -1,0 +1,14 @@
+ipython
+bandit
+black
+isort
+jedi
+mccabe
+mypy
+pudb
+pylint
+python-lsp-server
+rope
+vulture
+invoke
+pytest
