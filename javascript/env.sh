@@ -4,5 +4,3 @@ alias jsbs=' \
     cp ~/.config/reosource/dotfile/javascript/.jshint.json .jshintrc && \
     npm install prettier eslint typescript && \
     npm install eslint-config-prettier jshint'
-
-export PATH=$PATH:$HOME/.npm/bin
