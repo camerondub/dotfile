@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+""" code-commit-create """
+
+import argparse
+import json
+import sys
+
+from invoke import run
+
+if __name__ == "__main__":
+    try:
+        parser = argparse.ArgumentParser()
+        parser.add_argument("repo_name")
+        parser.add_argument("--desc")
+        args = parser.parse_args()
+
+        create_repo_cmd = f"aws codecommit create-repository --repository-name {args.repo_name}"
+        if args.desc:
+            create_repo_cmd += f" --repository-description {args.desc}"
+
+        create_repo_ret = run(create_repo_cmd)
+        create_repo_dct = json.loads(create_repo_ret.stdout)
+        clone_url = create_repo_dct["repositoryMetadata"]["cloneUrlSsh"]
+
+        rev_parse_cmd = "git rev-parse --is-inside-work-tree"
+        if run(rev_parse_cmd, warn=True).exited != 0:
+            run("git init")
+
+        run(f"git remote add origin {clone_url}")
+        print(clone_url)
+        print("Created AWS CodeCommit repository successfully")
+    except Exception as e:
+        print(f"Error during code-commit-create: {e}")
+        sys.exit()
