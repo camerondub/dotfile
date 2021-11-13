@@ -14,6 +14,7 @@
         sdiff = "diff --cached"
         aa = "add -A"
         cs = "!git aa; git commit -m 'Update.'; git up"
+        pom = "!git push -u origin master"
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input
