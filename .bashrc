@@ -147,20 +147,6 @@ alias rl='rm -f *.log'
 # free up ctrl-s for vim
 stty -ixon -ixoff
 
-# pull in /opt binaries to path (above system binaries)
-for optd in /opt/* ; do
-	if [ -e $optd/bin ] && [[ ":$PATH:" != *":${optd}/bin:"* ]]; then
-		export PATH="$optd/bin:$PATH"
-	fi
-done
-
-# pull in personal ~/opt binaries to path (above /opt binaries)
-for optd in $HOME/opt/* ; do
-	if [ -e $optd/bin ] && [[ ":$PATH:" != *":${optd}/bin:"* ]]; then
-		export PATH="$optd/bin:$PATH"
-	fi
-done
-
 # execute include/install scripts for reosource modules
 export rconfd="$HOME/.config/reosource"
 for locald in $rconfd/*/ ; do
