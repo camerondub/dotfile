@@ -92,6 +92,10 @@ alias ll='ls -AlhF --group-directories-first'
 alias la='ls -A'
 alias l='ls -lhF --group-directories-first'
 
+if [ -x /usr/bin/batcat ]; then
+    alias cat='batcat -pp --theme=ansi-dark'
+fi
+
 # change-dir-and-list
 cl() {
 	cd $1
