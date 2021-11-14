@@ -1,5 +1,5 @@
 send-keys vim Enter
-send-keys ,no
+send-keys ,wv
 send-keys ,wh
 split-window -c "#{pane_current_path}"
 resize-pane -D 15
