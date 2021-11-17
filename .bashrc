@@ -134,9 +134,13 @@ export TERM=xterm-256color
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# user scripts
+# bin path updating
 if [[ ":$PATH:" != *":${HOME}/bin:"* ]]; then
     export PATH=$PATH:$HOME/bin
+fi
+
+if [[ ":$PATH:" != *":${HOME}/.local/bin:"* ]]; then
+    export PATH=$PATH:$HOME/.local/bin
 fi
 
 # python
