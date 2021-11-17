@@ -70,6 +70,10 @@ ppd() {
     __python_local_invoke pudb3 $@
 }
 
+ppi() {
+    pip install -e .
+}
+
 
 vim() {
     __check_activate_python_venv
