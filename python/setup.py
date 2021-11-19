@@ -12,4 +12,5 @@ setup(
         "python-decouple",
         "rlog @ git+https://github.com/camerondub/python-rlog.git#egg=rlog",
     ],
+    entry_points={"console_scripts": []},
 )
