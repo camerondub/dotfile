@@ -144,10 +144,10 @@ if [[ ":$PATH:" != *":${HOME}/.local/bin:"* ]]; then
 fi
 
 # python
-source ~/.config/reosource/dotfile/python/env.sh
+source ~/.config/cw/dotfile/python/env.sh
 
 # javascript
-source ~/.config/reosource/dotfile/javascript/env.sh
+source ~/.config/cw/dotfile/javascript/env.sh
 
 # log removal
 alias rl='rm -f *.log'
@@ -155,8 +155,8 @@ alias rl='rm -f *.log'
 # free up ctrl-s for vim
 stty -ixon -ixoff
 
-# execute include/install scripts for reosource modules
-export rconfd="$HOME/.config/reosource"
+# execute include/install scripts for cw modules
+export rconfd="$HOME/.config/cw"
 for locald in $rconfd/*/ ; do
 	if [ -e $locald/incl.sh ]; then
 		source $locald/incl.sh
@@ -177,5 +177,5 @@ fi
 if [ -e $HOME/.rstartup ]; then
     source $HOME/.rstartup
 else
-    source $HOME/.config/reosource/dotfile/.rstartup
+    source $HOME/.config/cw/dotfile/.rstartup
 fi

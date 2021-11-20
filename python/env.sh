@@ -43,13 +43,13 @@ pybs() {
     __check_deactivate_python_venv
     py -m virtualenv .pyenv && pyon
     if [[ ! -f "setup.cfg" ]] ; then
-        cp ~/.config/reosource/dotfile/python/setup.cfg setup.cfg
+        cp ~/.config/cw/dotfile/python/setup.cfg setup.cfg
     fi
     if [[ ! -f "pyproject.toml" ]] ; then
-        cp ~/.config/reosource/dotfile/python/pyproject.toml pyproject.toml
+        cp ~/.config/cw/dotfile/python/pyproject.toml pyproject.toml
     fi
     if [[ ! -f "setup.py" ]] ; then
-        cp ~/.config/reosource/dotfile/python/setup.py setup.py
+        cp ~/.config/cw/dotfile/python/setup.py setup.py
     fi
     if [[ "$1" != "--no-pkg" ]] && [[ "$2" != "--no-pkg" ]] ; then
         mkdir -p src/${PWD##*/}
@@ -58,7 +58,7 @@ pybs() {
     fi
     pip install --upgrade pip
     if [[ "$1" != "--no-dev" ]] && [[ "$2" != "--no-dev" ]] ; then
-        pip install -r ~/.config/reosource/dotfile/python/dev-requirements.txt
+        pip install -r ~/.config/cw/dotfile/python/dev-requirements.txt
     fi
 }
 

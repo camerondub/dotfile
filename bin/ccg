@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
         if "config" in repo_name:
             # force placement to user config area
-            run(f"mkdir -p ~/.config/reosource")
-            local_name = f"~/.config/reosource/{local_name}"
+            run(f"mkdir -p ~/.config/cw")
+            local_name = f"~/.config/cw/{local_name}"
 
 
     repo_origin = f"ssh://git-codecommit.us-west-1.amazonaws.com/v1/repos/{repo_name}"

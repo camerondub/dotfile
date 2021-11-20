@@ -8,7 +8,7 @@
 ## utility to scan and link any utilities in reoconf/*/ to $HOME/bin
 ################################################################################
 
-reoconfdir="$HOME/.config/reosource"
+reoconfdir="$HOME/.config/cw"
 targetdir="$HOME/bin"
 
 # ensure bin directory exists
