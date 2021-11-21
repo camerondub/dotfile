@@ -41,7 +41,12 @@ __python_local_invoke() {
 
 pybs() {
     __check_deactivate_python_venv
-    py -m virtualenv .pyenv && pyon
+    py -m virtualenv .pyenv
+    if [[ $? != 0 ]] ; then
+        echo "Error setting up virtualenv: $?"
+        return $?
+    fi
+    pyon
     if [[ ! -f "setup.cfg" ]] ; then
         cp ~/.config/cw/dotfile/python/setup.cfg setup.cfg
     fi
