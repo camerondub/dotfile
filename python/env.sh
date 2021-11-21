@@ -50,6 +50,7 @@ pybs() {
     fi
     if [[ ! -f "setup.py" ]] ; then
         cp ~/.config/cw/dotfile/python/setup.py setup.py
+        sed -i "s/name=\"\",/name=\"${PWD##*/}\",/g" setup.py
     fi
     if [[ "$1" != "--no-pkg" ]] && [[ "$2" != "--no-pkg" ]] ; then
         mkdir -p src/${PWD##*/}
