@@ -12,3 +12,4 @@ rope
 vulture
 invoke
 pytest
+setuptools_scm
