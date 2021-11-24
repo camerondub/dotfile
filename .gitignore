@@ -4,6 +4,7 @@
 .vimrc.dir
 .vimsession
 .note.md
+.note.yml
 .gdb_history
 __pycache__
 *.pyc

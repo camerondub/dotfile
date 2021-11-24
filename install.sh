@@ -20,7 +20,7 @@ relpath=$(python3 -c "import os.path; print(os.path.relpath('${thisdir}', '${tar
 # remove old links
 rm -f ${targetdir}/.bashrc ${targetdir}/.gitconfig ${targetdir}/.gitignore ${targetdir}/.dircolors
 rm -f ${targetdir}/.tmux.conf ${targetdir}/.gdbinit ${targetdir}/.ackrc ${targetdir}/.pylintrc
-rm -f ${targetdir}/.invoke.yaml ${targetdir}/.clang-format 
+rm -f ${targetdir}/.invoke.yaml ${targetdir}/.clang-format ${targetdir}/.yamllint.yml
 
 # install new links
 ln -s ${relpath}/.bashrc ${targetdir}/.bashrc
@@ -33,6 +33,7 @@ ln -s ${relpath}/.ackrc ${targetdir}/.ackrc
 ln -s ${relpath}/python/.pylintrc ${targetdir}/.pylintrc
 ln -s ${relpath}/python/.invoke.yaml ${targetdir}/.invoke.yaml
 ln -s ${relpath}/cpp/.clang-format ${targetdir}/.clang-format
+ln -s ${relpath}/yaml/.yamllint.yml ${targetdir}/.yamllint.yml
 
 # scan bin folders and install
 source ${thisdir}/bin/scanbin

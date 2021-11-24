@@ -149,6 +149,9 @@ source ~/.config/cw/dotfile/python/env.sh
 # javascript
 source ~/.config/cw/dotfile/javascript/env.sh
 
+# yaml
+source ~/.config/cw/dotfile/yaml/env.sh
+
 # log removal
 alias rl='rm -f *.log'
 
