@@ -155,6 +155,9 @@ source ~/.config/cw/dotfile/yaml/env.sh
 # log removal
 alias rl='rm -f *.log'
 
+# edit local dir note file
+alias note='vim .note.yml'
+
 # free up ctrl-s for vim
 stty -ixon -ixoff
 
