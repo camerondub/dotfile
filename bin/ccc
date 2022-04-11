@@ -11,12 +11,15 @@ if __name__ == "__main__":
     try:
         parser = argparse.ArgumentParser()
         parser.add_argument("repo_name")
+        parser.add_argument("-p", "--profile")
         parser.add_argument("--desc")
         args = parser.parse_args()
 
         create_repo_cmd = f"aws codecommit create-repository --repository-name {args.repo_name}"
         if args.desc:
             create_repo_cmd += f" --repository-description {args.desc}"
+        if args.profile:
+            create_repo_cmd += f" --profile {args.profile}"
 
         create_repo_ret = run(create_repo_cmd)
         create_repo_dct = json.loads(create_repo_ret.stdout)
