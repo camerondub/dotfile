@@ -93,7 +93,7 @@ alias la='ls -A'
 alias l='ls -lhF --group-directories-first'
 
 if [ -x /usr/bin/batcat ]; then
-    alias cat='batcat -pp --theme=ansi-dark'
+    alias cat='batcat -pp --theme=base16'
 fi
 
 # change-dir-and-list
