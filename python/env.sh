@@ -1,4 +1,5 @@
 alias py='python3'
+alias ipy='ipython3'
 alias pudb='pudb3'
 alias pyon='source .pyenv/bin/activate'
 alias pyoff='deactivate'
