@@ -65,7 +65,7 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*|screen*)
+xterm*|rxvt*|screen*|tmux*)
     PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ "
     ;;
 *)
@@ -126,9 +126,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# set default terminal
-export TERM=xterm-256color
 
 # set default editor
 export VISUAL=vim
