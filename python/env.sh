@@ -48,15 +48,9 @@ pybs() {
         return $?
     fi
     pyon
-    if [[ ! -f "setup.cfg" ]] ; then
-        cp ~/.config/cw/dotfile/python/setup.cfg setup.cfg
-    fi
     if [[ ! -f "pyproject.toml" ]] ; then
         cp ~/.config/cw/dotfile/python/pyproject.toml pyproject.toml
-    fi
-    if [[ ! -f "setup.py" ]] ; then
-        cp ~/.config/cw/dotfile/python/setup.py setup.py
-        sed -i "s/name=\"\",/name=\"${PWD##*/}\",/g" setup.py
+        sed -i "s/name = \"\"/name = \"${PWD##*/}\"/g" pyproject.toml
     fi
     if [[ "$1" != "--no-pkg" ]] && [[ "$2" != "--no-pkg" ]] ; then
         mkdir -p src/${PWD##*/}
