@@ -155,7 +155,8 @@ disable=raw-checker-failed,
         missing-module-docstring,
         missing-class-docstring,
         missing-function-docstring,
-        invalid-name
+        invalid-name,
+        unspecified-encoding,
 
 
 # Enable the message, report, category or checker with the given id(s). You can
