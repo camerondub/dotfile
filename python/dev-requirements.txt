@@ -4,7 +4,7 @@
 #
 #    pip-compile dev-requirements.in
 #
-astroid==2.15.5
+astroid==2.15.6
     # via pylint
 asttokens==2.2.1
     # via stack-data
@@ -12,13 +12,13 @@ backcall==0.2.0
     # via ipython
 bandit==1.7.5
     # via -r dev-requirements.in
-black==23.3.0
+black==23.7.0
     # via -r dev-requirements.in
-click==8.1.3
+click==8.1.6
     # via black
 decorator==5.1.1
     # via ipython
-dill==0.3.6
+dill==0.3.7
     # via pylint
 docstring-to-markdown==0.12
     # via python-lsp-server
@@ -26,13 +26,13 @@ executing==1.2.0
     # via stack-data
 gitdb==4.0.10
     # via gitpython
-gitpython==3.1.31
+gitpython==3.1.32
     # via bandit
 iniconfig==2.0.0
     # via pytest
-invoke==2.1.2
+invoke==2.2.0
     # via -r dev-requirements.in
-ipython==8.13.2
+ipython==8.14.0
     # via -r dev-requirements.in
 isort==5.12.0
     # via
@@ -46,7 +46,7 @@ jedi==0.18.2
     #   python-lsp-server
 lazy-object-proxy==1.9.0
     # via astroid
-markdown-it-py==2.2.0
+markdown-it-py==3.0.0
     # via rich
 matplotlib-inline==0.1.6
     # via ipython
@@ -56,7 +56,7 @@ mccabe==0.7.0
     #   pylint
 mdurl==0.1.2
     # via markdown-it-py
-mypy==1.3.0
+mypy==1.5.0
     # via -r dev-requirements.in
 mypy-extensions==1.0.0
     # via
@@ -71,7 +71,7 @@ packaging==23.1
     #   setuptools-scm
 parso==0.8.3
     # via jedi
-pathspec==0.11.1
+pathspec==0.11.2
     # via black
 pbr==5.11.1
     # via stevedore
@@ -79,16 +79,16 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-platformdirs==3.5.1
+platformdirs==3.10.0
     # via
     #   black
     #   pylint
     #   pytoolconfig
-pluggy==1.0.0
+pluggy==1.2.0
     # via
     #   pytest
     #   python-lsp-server
-prompt-toolkit==3.0.38
+prompt-toolkit==3.0.39
     # via ipython
 ptyprocess==0.7.0
     # via pexpect
@@ -96,26 +96,26 @@ pudb==2022.1.3
     # via -r dev-requirements.in
 pure-eval==0.2.2
     # via stack-data
-pygments==2.15.1
+pygments==2.16.1
     # via
     #   ipython
     #   pudb
     #   rich
-pylint==2.17.4
+pylint==2.17.5
     # via -r dev-requirements.in
-pytest==7.3.1
+pytest==7.4.0
     # via -r dev-requirements.in
 python-lsp-jsonrpc==1.0.0
     # via python-lsp-server
-python-lsp-server==1.7.3
+python-lsp-server==1.7.4
     # via -r dev-requirements.in
 pytoolconfig[global]==1.2.5
     # via rope
-pyyaml==6.0
+pyyaml==6.0.1
     # via bandit
-rich==13.3.5
+rich==13.5.2
     # via bandit
-rope==1.8.0
+rope==1.9.0
     # via -r dev-requirements.in
 setuptools-scm==7.1.0
     # via -r dev-requirements.in
@@ -129,17 +129,17 @@ stevedore==5.1.0
     # via bandit
 toml==0.10.2
     # via vulture
-tomlkit==0.11.8
+tomlkit==0.12.1
     # via pylint
 traitlets==5.9.0
     # via
     #   ipython
     #   matplotlib-inline
-typing-extensions==4.6.2
+typing-extensions==4.7.1
     # via
     #   mypy
     #   setuptools-scm
-ujson==5.7.0
+ujson==5.8.0
     # via
     #   python-lsp-jsonrpc
     #   python-lsp-server
@@ -149,7 +149,7 @@ urwid==2.1.2
     #   urwid-readline
 urwid-readline==0.13
     # via pudb
-vulture==2.7
+vulture==2.8
     # via -r dev-requirements.in
 wcwidth==0.2.6
     # via prompt-toolkit
