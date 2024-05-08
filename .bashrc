@@ -149,6 +149,11 @@ source ~/.config/cw/dotfile/javascript/env.sh
 # yaml
 source ~/.config/cw/dotfile/yaml/env.sh
 
+# solana
+if [[ ":$PATH:" != *":${HOME}/.local/share/solana/install/active_release/bin:"* ]]; then
+    export PATH=$PATH:"/home/cw/.local/share/solana/install/active_release/bin"
+fi
+
 # log removal
 alias rl='rm -f *.log'
 
