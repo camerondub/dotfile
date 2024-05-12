@@ -99,9 +99,7 @@ fi
 # change-dir-and-list
 cl() {
 	cd $1
-	printf "\n"
-	printf "\033[00;36m$PWD\033[00m\n"
-	ls -AlhF --group-directories-first
+	ll
 }
 
 # vertical listing for dirs
