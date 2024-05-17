@@ -149,7 +149,12 @@ source ~/.config/cw/dotfile/yaml/env.sh
 
 # solana
 if [[ ":$PATH:" != *":${HOME}/.local/share/solana/install/active_release/bin:"* ]]; then
-    export PATH=$PATH:"/home/cw/.local/share/solana/install/active_release/bin"
+    export PATH=$PATH:"${HOME}/.local/share/solana/install/active_release/bin"
+fi
+
+# rust
+if [[ ":$PATH:" != *":${HOME}/.cargo/bin:"* ]]; then
+    export PATH=$PATH:"${HOME}/.cargo/bin"
 fi
 
 # log removal
