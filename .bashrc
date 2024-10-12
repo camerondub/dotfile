@@ -84,9 +84,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # some more ls aliases
 alias ll='ls -AlhF --group-directories-first'
 alias la='ls -A'
@@ -95,12 +92,6 @@ alias l='ls -lhF --group-directories-first'
 if [ -x /usr/bin/batcat ]; then
     alias cat='batcat -pp --theme=base16'
 fi
-
-# change-dir-and-list
-cl() {
-	cd $1
-	ll
-}
 
 # vertical listing for dirs
 alias dirs='dirs -v'
