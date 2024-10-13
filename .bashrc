@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # set default editor
+alias nv=nvim
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
