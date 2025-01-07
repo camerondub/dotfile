@@ -131,10 +131,10 @@ if [[ ":$PATH:" != *":${HOME}/.local/bin:"* ]]; then
 fi
 
 # python
-source ~/.config/cw/dotfile/python/env.sh
+source ~/.config/cw/dotfile/py/env.sh
 
 # javascript
-source ~/.config/cw/dotfile/javascript/env.sh
+source ~/.config/cw/dotfile/js/env.sh
 
 # yaml
 source ~/.config/cw/dotfile/yaml/env.sh
