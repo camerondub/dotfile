@@ -30,8 +30,8 @@ ln -s ${relpath}/.dircolors ${targetdir}/.dircolors
 ln -s ${relpath}/.tmux.conf ${targetdir}/.tmux.conf
 ln -s ${relpath}/.gdbinit ${targetdir}/.gdbinit
 ln -s ${relpath}/.ackrc ${targetdir}/.ackrc
-ln -s ${relpath}/python/.pylintrc ${targetdir}/.pylintrc
-ln -s ${relpath}/python/.invoke.yaml ${targetdir}/.invoke.yaml
+ln -s ${relpath}/py/.pylintrc ${targetdir}/.pylintrc
+ln -s ${relpath}/py/.invoke.yaml ${targetdir}/.invoke.yaml
 ln -s ${relpath}/cpp/.clang-format ${targetdir}/.clang-format
 ln -s ${relpath}/yaml/.yamllint.yml ${targetdir}/.yamllint.yml
 

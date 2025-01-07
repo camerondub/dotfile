@@ -49,7 +49,7 @@ pybs() {
     fi
     pyon
     if [[ ! -f "pyproject.toml" ]] ; then
-        cp ~/.config/cw/dotfile/python/pyproject.toml pyproject.toml
+        cp ~/.config/cw/dotfile/py/pyproject.toml pyproject.toml
         sed -i "s/name = \"\"/name = \"${PWD##*/}\"/g" pyproject.toml
     fi
     if [[ "$1" != "--no-pkg" ]] && [[ "$2" != "--no-pkg" ]] ; then
@@ -59,7 +59,7 @@ pybs() {
     fi
     pip install --upgrade pip
     if [[ "$1" != "--no-dev" ]] && [[ "$2" != "--no-dev" ]] ; then
-        pip install -r ~/.config/cw/dotfile/python/dev-requirements.txt
+        pip install -r ~/.config/cw/dotfile/py/dev-requirements.txt
     fi
 }
 
