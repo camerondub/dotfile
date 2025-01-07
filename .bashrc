@@ -90,7 +90,7 @@ alias la='ls -A'
 alias l='ls -lhF --group-directories-first'
 
 if [ -x /usr/bin/batcat ]; then
-    alias cat='batcat -pp --theme=base16'
+    alias cat='batcat -pp --theme=ansi'
 fi
 
 # vertical listing for dirs
