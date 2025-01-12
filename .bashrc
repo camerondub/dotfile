@@ -118,6 +118,7 @@ fi
 
 # set default editor
 alias nv=nvim
+alias nvl='NVIM_APPNAME=nvim-lite nvim'
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
