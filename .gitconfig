@@ -1,20 +1,21 @@
 [user]
-	email = cw@reosource.io
-	name = Cameron Wong
+    email = cw@reosource.io
+    name = Cameron Wong
 [push]
-	default = simple
+    default = simple
+    autoSetupRemote = true
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	sub = submodule
-        down = "!git remote update -p; git merge --ff-only @{u}"
-        up = push
-        sdiff = "diff --cached"
-        aa = "add -A"
-        cs = "!git aa; git commit -m 'Update.'; git up"
-        pom = "!git push -u origin master"
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    sub = submodule
+    down = "!git remote update -p; git merge --ff-only @{u}"
+    up = push
+    sdiff = "diff --cached"
+    aa = "add -A"
+    cs = "!git aa; git commit -m 'Update.'; git up"
+    pom = "!git push -u origin master"
 [core]
-	excludesfile = ~/.gitignore
-	autocrlf = input
+    excludesfile = ~/.gitignore
+    autocrlf = input
