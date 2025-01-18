@@ -17,3 +17,5 @@ __pycache__
 .jshintrc
 *.egg-info
 node_modules
+*.diff
+*.ignore
