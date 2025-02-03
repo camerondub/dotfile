@@ -9,6 +9,7 @@
     br = branch
     ci = commit
     st = status
+    sw = switch
     sub = submodule
     down = "!git remote update -p; git merge --ff-only @{u}"
     up = push
