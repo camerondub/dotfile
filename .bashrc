@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # set default editor
+alias se='sudoedit'
 alias nv=nvim
 alias nvl='NVIM_APPNAME=nvim-lite nvim'
 alias nvc='nvim --clean'
