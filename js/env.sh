@@ -5,3 +5,7 @@ alias jsbs=' \
     npm install prettier eslint typescript --save-dev && \
     npm install eslint-config-prettier jshint --save-dev && \
     npm install eslint-plugin-jest --save-dev'
+
+if [[ ":$PATH:" != *":${HOME}/opt/npm/bin:"* ]]; then
+    export PATH=$PATH:$HOME/opt/npm/bin
+fi
