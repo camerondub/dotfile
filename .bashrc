@@ -142,16 +142,6 @@ source ~/.config/cw/dotfile/js/env.sh
 # yaml
 source ~/.config/cw/dotfile/yaml/env.sh
 
-# solana
-if [[ ":$PATH:" != *":${HOME}/.local/share/solana/install/active_release/bin:"* ]]; then
-    export PATH=$PATH:"${HOME}/.local/share/solana/install/active_release/bin"
-fi
-
-# rust
-if [[ ":$PATH:" != *":${HOME}/.cargo/bin:"* ]]; then
-    export PATH=$PATH:"${HOME}/.cargo/bin"
-fi
-
 # free up ctrl-s for vim
 stty -ixon -ixoff
 
