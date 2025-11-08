@@ -75,7 +75,7 @@ ppi() {
 }
 
 
-vim() {
+vim_pyenv() {
     __check_activate_python_venv
     /usr/bin/env vim "$@"
 }
