@@ -15,7 +15,7 @@
     up = push
     sdiff = "diff --cached"
     aa = "add -A"
-    cl = "!git clean -fdx -e \"**/tasks.py\" -e \"**/.env\""
+    cl = "!git clean -fdx -e \"**/tasks.py\" -e \"**/.env\" -e \"**/.note.md\" -e \"**/.note.yml\""
 [core]
     excludesfile = ~/.gitignore
     autocrlf = input
